@@ -1,0 +1,17 @@
+{
+  "network": {
+    "servers": {{ logstash_forwarder.servers | to_json }},
+    "ssl certificate": "{{ logstash_forwarder.ssl_ca }}",
+    "ssl key": "{{ logstash_forwarder.ssl_key }}",
+    "ssl ca": "{{ logstash_forwarder.ssl_ca }}"
+  },
+  "files": [
+  {% for (app, value) in logstash_forwarder.files.iteritems() %}
+    {{ value | to_json }}{% if not loop.last %},
+    {% endif %}
+  {% endfor %}
+
+  ]
+}
+
+
