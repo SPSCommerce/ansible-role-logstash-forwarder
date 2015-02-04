@@ -1,0 +1,2 @@
+ - name: Generating config
+   template: src=combined.conf.j2 dest={{ logstash_forwarder_config_dir }}/logstash-forwarder.conf

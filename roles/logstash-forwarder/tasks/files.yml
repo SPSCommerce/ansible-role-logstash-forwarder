@@ -1,0 +1,3 @@
+ - name: Generating application config files
+   template: src=files.conf.j2 dest={{ logstash_forwarder_config_dir }}/{{ item.key }}.conf
+   with_dict: "{{ logstash_forwarder_files }}"

@@ -1,0 +1,23 @@
+---
+- hosts: vagrant
+  roles:
+    - role: logstash-forwarder
+      logstash_forwarder_split_files: true
+      logstash_forwarder_servers:
+        - server1
+        - server2
+      logstash_forwarder_ssl_cert: sslcert
+      logstash_forwarder_ssl_key: sslkey
+      logstash_forwarder_ssl_ca: sslca
+      logstash_forwarder_files:
+        test_app:
+          fields:
+            tags: test
+          paths:
+            - /var/log/test
+            - /somewhere/else/test
+        another_app:
+          fields:
+            tags: app2
+          paths:
+            - /var/log/another_app

@@ -1,0 +1,8 @@
+build/*
+!build/.keep
+inventory/vagrant
+inventory/groups
+.vagrant/
+.kitchen/
+.idea/
+*.iml

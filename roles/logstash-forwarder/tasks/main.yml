@@ -1,0 +1,12 @@
+---
+  - name: Ensure {{ logstash_forwarder_config_dir }} exists
+    file: path="{{ logstash_forwarder_config_dir }}" state=directory
+
+  - include: combined.yml
+    when: logstash_forwarder_split_files != true
+
+  - include: files.yml
+    when: logstash_forwarder_files is defined and logstash_forwarder_split_files == true
+
+  - include: network.yml
+    when: logstash_forwarder_servers is defined and logstash_forwarder_split_files == true
