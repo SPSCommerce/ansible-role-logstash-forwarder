@@ -1,4 +1,0 @@
----
-# tasks file for logstash-forwarder
- - name: Try to generate some JSON
-   template: src=logstash-forwarder.conf.j2 dest=/tmp/hi
