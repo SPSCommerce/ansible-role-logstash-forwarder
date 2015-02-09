@@ -41,29 +41,29 @@ An example playbook is included in the test directory, but here is a rundown on 
 
     - hosts: all
       roles:
-      - role: logstash-forwarder
-            logstash_forwarder_remove_old: true
-            logstash_forwarder_state: absent
-            logstash_forwarder_version: 0.3.1.20150205.19
-            logstash_forwarder_split_files: true
-            logstash_forwarder_servers:
-              - server1
-              - server2
-            logstash_forwarder_ssl_cert: sslcert
-            logstash_forwarder_ssl_key: sslkey
-            logstash_forwarder_ssl_ca: sslca
-            logstash_forwarder_files:
-              test_app:
-                fields:
-                  tags: test
-                paths:
-                  - /var/log/test
-                  - /somewhere/else/test
-              another_app:
-                fields:
-                  tags: app2
-                paths:
-                  - /var/log/another_app
+        - role: logstash-forwarder
+          logstash_forwarder_state: present
+          logstash_forwarder_version: 0.3.1.20150205.19
+          logstash_forwarder_split_files: true
+          logstash_forwarder_servers:
+            - server1
+            - server2
+          logstash_forwarder_ssl_cert: sslcert
+          logstash_forwarder_ssl_key: sslkey
+          logstash_forwarder_ssl_ca: sslca
+          logstash_forwarder_files:
+            test_app:
+              fields:
+                tags: test
+              paths:
+                - /var/log/test
+                - /somewhere/else/test
+            another_app:
+              fields:
+                tags: app2
+              paths:
+                - /var/log/another_app
+
 
 License
 -------
