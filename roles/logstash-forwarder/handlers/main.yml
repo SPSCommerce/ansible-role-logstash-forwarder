@@ -1,2 +1,8 @@
 ---
-# handlers file for example
+- name: Restart Logstash-Forwarder
+  service: name=logstash-forwarder state=restarted
+  when: logstash_forwarder_start
+
+- name: Start Logstash-Forwarder
+  service: name=logstash-forwarder state=started enabled={{ logstash_forwarder_enabled | default(omit) }}
+  when: logstash_forwarder_start

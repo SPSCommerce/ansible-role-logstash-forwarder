@@ -1,0 +1,8 @@
+# Install the package using our included repos
+- apt: name=logstash-forwarder={{ logstash_forwarder_version }} state=present
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  notify: Start Logstash-Forwarder
+
+- yum: name=logstash-forwarder-{{ logstash_forwarder_version }} state=present
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+  notify: Start Logstash-Forwarder

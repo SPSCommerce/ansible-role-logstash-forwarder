@@ -1,2 +1,3 @@
  - name: Generating network config file
    template: src=network.conf.j2 dest={{ logstash_forwarder_config_dir }}/network.conf
+   notify: Restart Logstash-Forwarder

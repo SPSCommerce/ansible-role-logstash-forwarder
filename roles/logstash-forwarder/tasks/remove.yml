@@ -1,0 +1,14 @@
+- name: Stopping services
+  service: name=logstash-forwarder state=stopped enabled=false
+  failed_when: false
+
+- name: Removing Logstash-Forwarder (apt)
+  apt: name=logstash-forwarder state=absent purge=yes
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+- name: Removing Logstash-Forwarder (rpm)
+  yum: name=logstash-forwarder state=absent
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+- name: Removing config
+  file: path=logstash_forwarder_config_dir state=absent
