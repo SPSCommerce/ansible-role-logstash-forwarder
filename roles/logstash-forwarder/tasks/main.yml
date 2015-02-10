@@ -10,10 +10,10 @@
     when: logstash_forwarder_state == 'absent'
 
   - include: combined.yml
-    when: logstash_forwarder_split_files != true and logstash_forwarder_state == 'present'
+    when: logstash_forwarder_split_files != true
 
   - include: files.yml
-    when: logstash_forwarder_files is defined and logstash_forwarder_split_files == true and logstash_forwarder_state == 'present'
+    when: logstash_forwarder_files is defined and logstash_forwarder_split_files == true
 
   - include: network.yml
-    when: logstash_forwarder_servers is defined and logstash_forwarder_split_files == true and logstash_forwarder_state == 'present'
+    when: logstash_forwarder_servers is defined and logstash_forwarder_split_files == true
