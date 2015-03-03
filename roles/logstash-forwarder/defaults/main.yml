@@ -13,3 +13,4 @@ logstash_forwarder_idle_flush_time': ''
 logstash_forwarder_from_beginning: false
 logstash_forwarder_start: false
 logstash_forwarder_enabled: true
+logstash_forwarder_state: present
