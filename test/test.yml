@@ -2,8 +2,6 @@
 - hosts: vagrant
   roles:
     - role: logstash-forwarder
-      logstash_forwarder_state: present
-      logstash_forwarder_version: 0.3.1.20150205.19
       logstash_forwarder_split_files: true
       logstash_forwarder_servers:
         - server1

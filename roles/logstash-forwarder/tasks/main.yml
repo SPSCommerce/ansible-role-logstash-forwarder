@@ -1,10 +1,10 @@
 ---
   - name: Ensure {{ logstash_forwarder_config_dir }} exists
     file: path="{{ logstash_forwarder_config_dir }}" state=directory
-    when: logstash_forwarder_state == 'present'
+    when: logstash_forwarder_state is defined and logstash_forwarder_state == 'present'
 
   - include: install.yml
-    when: logstash_forwarder_state == 'present'
+    when: logstash_forwarder_state == 'present' and logstash_forwarder_version is defined
 
   - include: remove.yml
     when: logstash_forwarder_state == 'absent'
