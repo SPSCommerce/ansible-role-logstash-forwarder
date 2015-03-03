@@ -11,5 +11,5 @@ logstash_forwarder_cpuprofile: ''
 logstash_forwarder_spool_size: 1024
 logstash_forwarder_idle_flush_time': ''
 logstash_forwarder_from_beginning: false
-logstash_forwarder_start: true
+logstash_forwarder_start: false
 logstash_forwarder_enabled: true
