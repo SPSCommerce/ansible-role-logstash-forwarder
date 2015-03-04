@@ -1,5 +1,5 @@
 ---
-logstash_forwarder_config_dir: '/etc/logstash-forwarder/conf.d'
+logstash_forwarder_config_dir: '/etc/logstash-forwarder'
 logstash_forwarder_split_files: true
 logstash_forwarder_log_to_syslog: true
 logstash_forwarder_cpuprofile: ''

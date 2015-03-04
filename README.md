@@ -15,7 +15,7 @@ Role Variables
 | `logstash_forwarder_state` | present or absent | present |
 | `logstash_forwarder_enabled` | start on boot| yes |
 | `logstash_forwarder_start` | start after installing (ensure running) | false |
-| `logstash_forwarder_config_dir` | configuration directory. will be created if it absent| /etc/logstash-forwarder/conf.d |
+| `logstash_forwarder_config_dir` | configuration directory. will be created if it absent| /etc/logstash-forwarder |
 | `logstash_forwarder_split_files` | should conf files be created separately in .d fashion (not supported by all versions) | true |
 | `logstash_forwarder_log_to_syslog` | log to syslog vs stdout | true |
 | `logstash_forwarder_cpuprofile` | cpuprofile option for logstash-forwarder |  | no
