@@ -1,11 +1,6 @@
 ---
 logstash_forwarder_config_dir: '/etc/logstash-forwarder/conf.d'
 logstash_forwarder_split_files: true
-logstash_forwarder_servers:
-logstash_forwarder_ssl_cert:
-logstash_forwarder_ssl_key:
-logstash_forwarder_ssl_ca:
-logstash_forwarder_files:
 logstash_forwarder_log_to_syslog: true
 logstash_forwarder_cpuprofile: ''
 logstash_forwarder_spool_size: 1024
