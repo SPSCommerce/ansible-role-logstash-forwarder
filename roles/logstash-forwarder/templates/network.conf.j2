@@ -1,8 +1,12 @@
 {
 "network": {
     "servers": {{ logstash_forwarder_servers | to_json }},
+    {% if logstash_forwarder_ssl_cert is defined %}
     "ssl certificate": "{{ logstash_forwarder_ssl_cert }}",
+    {% endif %}
+    {% if logstash_forwarder_ssl_key is defined %}
     "ssl key": "{{ logstash_forwarder_ssl_key }}",
+    {% endif %}
     "ssl ca": "{{ logstash_forwarder_ssl_ca }}"
   }
 }
